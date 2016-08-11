@@ -14,8 +14,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class SnippetSerializer(serializers.HyperlinkedModelSerializer):
 	owner = serializers.ReadOnlyField(source='owner.username')
-	hightlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
+	highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
 	class Meta:
 		model = Snippet
 		fields = ('url', 'pk', 'highlight', 'owner',
-		 'title', 'code', 'linenos', 'language', 'style')
+		 'title', 'code', 'lineons', 'language', 'style')
